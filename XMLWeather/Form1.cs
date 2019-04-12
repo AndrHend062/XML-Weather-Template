@@ -42,12 +42,18 @@ namespace XMLWeather
                 reader.ReadToFollowing("time");
                 d.date = reader.GetAttribute("day");
 
+               
+                reader.ReadToFollowing("symbol");
+                d.condition = reader.GetAttribute("number");
+   
+                reader.ReadToFollowing("windDirection");
+                d.windDirection = reader.GetAttribute("code");
+                reader.ReadToFollowing("windSpeed");
+                d.windSpeed = reader.GetAttribute("mps");
+
                 reader.ReadToFollowing("temperature");
                 d.tempLow = reader.GetAttribute("min");
                 d.tempHigh = reader.GetAttribute("max");
-                reader.ReadToFollowing("symbol");
-                d.condition = reader.GetAttribute("number");
-
                 //TODO: if day object not null add to the days list
                 if (d != null)
                 {
@@ -74,10 +80,7 @@ namespace XMLWeather
             reader.ReadToFollowing("weather");
             days[0].condition = reader.GetAttribute("number");
 
-            reader.ReadToFollowing("speed");
-            days[0].windSpeed = reader.GetAttribute("value");
-            reader.ReadToFollowing("direction");
-            days[0].windDirection = reader.GetAttribute("code");
+            
 
         }
 
