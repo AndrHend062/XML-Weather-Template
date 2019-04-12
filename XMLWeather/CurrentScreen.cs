@@ -28,36 +28,9 @@ namespace XMLWeather
             maxOutput.Text = Convert.ToDouble(Form1.days[0].tempHigh).ToString("0.") + "°C";
             windlabel.Text = Convert.ToDouble(Form1.days[0].windSpeed).ToString("0.");
             windLabel2.Text = Form1.days[0].windDirection+"";
+            HumidLabel.Text = Convert.ToDouble(Form1.days[0].humidity).ToString("0.") + "%";
+            Form1.GetSymbol(0);
 
-            if (Form1.days[0].condition== "800")
-            {//clear sky
-                conditionBox.Image = XMLWeather.Properties.Resources._01d;
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 200 && Convert.ToInt16(Form1.days[0].condition) <299)
-            {///thunderstorm  11d
-                conditionBox.Image = XMLWeather.Properties.Resources._11d;
-
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 300 && Convert.ToInt16(Form1.days[0].condition) < 399)
-            {// drizzel   09d 
-                conditionBox.Image = XMLWeather.Properties.Resources._09d;
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 500 && Convert.ToInt16(Form1.days[0].condition) < 599)
-            {//// rain 10d
-                conditionBox.Image = XMLWeather.Properties.Resources._10d;
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 600 && Convert.ToInt16(Form1.days[0].condition) < 699)
-            {// snow 13d 
-                conditionBox.Image = XMLWeather.Properties.Resources._13d;
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 700 && Convert.ToInt16(Form1.days[0].condition) < 799)
-            {// atmospheare 50d
-                conditionBox.Image = XMLWeather.Properties.Resources._50d;
-            }
-            if (Convert.ToInt16(Form1.days[0].condition) >= 801 && Convert.ToInt16(Form1.days[0].condition) < 899)
-            {// cloud
-                conditionBox.Image = XMLWeather.Properties.Resources._03d;
-            }
         }
 
         private void forecastLabel_Click(object sender, EventArgs e)

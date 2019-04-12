@@ -77,13 +77,51 @@ namespace XMLWeather
             days[0].tempLow = reader.GetAttribute("max");
             days[0].tempHigh = reader.GetAttribute("min");
 
+            reader.ReadToFollowing("humidity");
+            days[0].humidity = reader.GetAttribute("value");
+
             reader.ReadToFollowing("weather");
             days[0].condition = reader.GetAttribute("number");
 
             
 
         }
+        public static Image GetSymbol(int d)
+        {
+            if (Form1.days[d].condition == "800")
+            {//clear sky
+                return Properties.Resources._01d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 200 && Convert.ToInt16(Form1.days[d].condition) < 299)
+            {///thunderstorm  11d
+                return Properties.Resources._11d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 300 && Convert.ToInt16(Form1.days[d].condition) < 399)
+            {// drizzel   09d 
+                return Properties.Resources._09d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 500 && Convert.ToInt16(Form1.days[d].condition) < 599)
+            {//// rain 10d
+                return Properties.Resources._10d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 600 && Convert.ToInt16(Form1.days[d].condition) < 699)
+            {// snow 13d 
+                return Properties.Resources._13d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 700 && Convert.ToInt16(Form1.days[d].condition) < 799)
+            {// atmospheare 50d
+                return Properties.Resources._50d;
+            }
+            if (Convert.ToInt16(Form1.days[d].condition) >= 801 && Convert.ToInt16(Form1.days[d].condition) < 899)
+            {// cloud
+                return Properties.Resources._03d;
+            }
+            else
+            {
+                return Properties.Resources._01d;
+            }
 
+        }
 
     }
 }

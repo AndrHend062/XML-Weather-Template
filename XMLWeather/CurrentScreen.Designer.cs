@@ -42,6 +42,8 @@
             this.windlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.windLabel2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.HumidLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.conditionBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,9 +63,9 @@
             // 
             this.maxOutput.BackColor = System.Drawing.Color.White;
             this.maxOutput.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxOutput.Location = new System.Drawing.Point(153, 279);
+            this.maxOutput.Location = new System.Drawing.Point(176, 279);
             this.maxOutput.Name = "maxOutput";
-            this.maxOutput.Size = new System.Drawing.Size(62, 24);
+            this.maxOutput.Size = new System.Drawing.Size(39, 24);
             this.maxOutput.TabIndex = 32;
             // 
             // maxLabel
@@ -83,7 +85,7 @@
             this.minOutput.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minOutput.Location = new System.Drawing.Point(21, 279);
             this.minOutput.Name = "minOutput";
-            this.minOutput.Size = new System.Drawing.Size(64, 20);
+            this.minOutput.Size = new System.Drawing.Size(40, 24);
             this.minOutput.TabIndex = 30;
             // 
             // minLabel
@@ -91,7 +93,7 @@
             this.minLabel.AutoSize = true;
             this.minLabel.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minLabel.ForeColor = System.Drawing.Color.White;
-            this.minLabel.Location = new System.Drawing.Point(153, 238);
+            this.minLabel.Location = new System.Drawing.Point(176, 238);
             this.minLabel.Name = "minLabel";
             this.minLabel.Size = new System.Drawing.Size(39, 20);
             this.minLabel.TabIndex = 29;
@@ -100,7 +102,7 @@
             // currentOutput
             // 
             this.currentOutput.BackColor = System.Drawing.Color.Transparent;
-            this.currentOutput.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentOutput.Font = new System.Drawing.Font("Mongolian Baiti", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentOutput.ForeColor = System.Drawing.Color.White;
             this.currentOutput.Location = new System.Drawing.Point(68, 132);
             this.currentOutput.Name = "currentOutput";
@@ -193,11 +195,33 @@
             this.windLabel2.TabIndex = 47;
             this.windLabel2.Text = "label2";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(75, 238);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Humidity";
+            // 
+            // HumidLabel
+            // 
+            this.HumidLabel.BackColor = System.Drawing.Color.White;
+            this.HumidLabel.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HumidLabel.Location = new System.Drawing.Point(92, 279);
+            this.HumidLabel.Name = "HumidLabel";
+            this.HumidLabel.Size = new System.Drawing.Size(52, 24);
+            this.HumidLabel.TabIndex = 49;
+            // 
             // CurrentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.HumidLabel);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.windLabel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.windlabel);
@@ -235,5 +259,7 @@
         private System.Windows.Forms.Label windlabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label windLabel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label HumidLabel;
     }
 }
